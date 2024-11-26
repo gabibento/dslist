@@ -49,19 +49,70 @@ O projeto segue a estrutura padrão de um projeto Spring Boot, organizado em cam
 Aqui estão os endpoints disponíveis na API:  
 
 ### Jogos  
-- **`GET /games`**: Retorna uma lista de todos os jogos cadastrados.  
-- **`GET /games/{id}`**: Retorna os detalhes de um jogo específico, identificado pelo seu ID.  
-
+- **`GET /games`**: Retorna uma lista com todos os jogos cadastrados, contendo informações resumidas.
+**Retorno:**
+```json
+  [
+  {
+    "id": 1,
+    "title": "The Legend of Zelda",
+    "platforms": "Switch",
+    "score": 95.0
+  },
+]
+```
+- **`GET /games/{id}`**: Retorna os detalhes completos de um jogo específico, identificado pelo seu ID.
+**Retorno:**
+``` json
+  {
+  "id": 1,
+  "title": "The Legend of Zelda",
+  "year": 2017,
+  "genre": "Action-Adventure",
+  "platforms": "Switch",
+  "score": 95.0,
+  "imgUrl": "https://...",
+  "shortDescription": "Explore a vast open world...",
+  "longDescription": "The Legend of Zelda: Breath of the Wild reinvents the series with its vast open-world gameplay."
+}
+```
 ### Listas de Jogos  
-- **`GET /lists`**: Retorna uma lista de todas as listas de jogos criadas.  
-- **`GET /lists/{listId}/games`**: Retorna os jogos associados a uma lista específica, identificada pelo seu ID.  
-
-### Associação de Jogos a Listas  
-- **`POST /lists/{listId}/games`**: Adiciona um jogo a uma lista específica com a posição desejada.
+- **`GET /lists`**: Retorna uma lista de todas as listas de jogos criadas.
+**Retorno:**
+``` json
+[
+  {
+    "id": 1,
+    "name": "Favoritos"
+  },
+  {
+    "id": 2,
+    "name": "Aventuras"
+  }
+]
+```
+- **`GET /lists/{listId}/games`**: Retorna todos os jogos associados a uma lista específica, identificada pelo ID da lista.
+**Retorno:**
+```json
+[
+  {
+    "id": 1,
+    "title": "The Legend of Zelda",
+    "platforms": "Switch",
+    "score": 95.0
+  },
+]
+```
   
 ### Associação de Jogos a Listas
 - **`POST /lists/{listId}/replacement`**: Atualiza a posição de um jogo em uma lista específica.
-
+**Request Body:**
+```json
+{
+  "sourceIndex": 1,
+  "destinationIndex": 3
+}
+```
 ## 🗂️ Como executar o projeto  
 
 ### Pré-requisitos  
