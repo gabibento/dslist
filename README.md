@@ -143,7 +143,7 @@ Aqui estão os endpoints disponíveis na API:
 
 1. Clone este repositório:  
    ```bash  
-   git clone https://github.com/seu-usuario/dslist.git  
+   git clone https://github.com/gabibento/dslist.git  
    cd dslist  
    ```  
 
