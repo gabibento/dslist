@@ -52,14 +52,23 @@ Aqui estão os endpoints disponíveis na API:
 - **`GET /games`**: Retorna uma lista com todos os jogos cadastrados, contendo informações resumidas.
 **Retorno:**
 ```json
-  [
+[
   {
     "id": 1,
     "title": "The Legend of Zelda",
-    "platforms": "Switch",
-    "score": 95.0
+    "year": 2017,
+    "imgUrl": "https://example.com/image.png",
+    "shortDescription": "Explore um vasto mundo aberto..."
   },
+  {
+    "id": 2,
+    "title": "God of War",
+    "year": 2018,
+    "imgUrl": "https://example.com/image2.png",
+    "shortDescription": "Uma jornada épica de pai e filho."
+  }
 ]
+
 ```
 - **`GET /games/{id}`**: Retorna os detalhes completos de um jogo específico, identificado pelo seu ID.
 **Retorno:**
@@ -98,10 +107,19 @@ Aqui estão os endpoints disponíveis na API:
   {
     "id": 1,
     "title": "The Legend of Zelda",
-    "platforms": "Switch",
-    "score": 95.0
+    "year": 2017,
+    "imgUrl": "https://example.com/image.png",
+    "shortDescription": "Explore um vasto mundo aberto..."
   },
+  {
+    "id": 2,
+    "title": "God of War",
+    "year": 2018,
+    "imgUrl": "https://example.com/image2.png",
+    "shortDescription": "Uma jornada épica de pai e filho."
+  }
 ]
+
 ```
   
 ### Associação de Jogos a Listas
